@@ -1,30 +1,51 @@
-<body class="d-flex h-100 text-center text-white bg-dark">
-
+<div class="d-flex h-100 text-center">
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="mb-auto">
-      <div>
-        <h3 class="float-md-start mb-0"> M.A </h3>
-        <nav class="nav nav-masthead justify-content-center float-md-end">
-          <a class="nav-link active" aria-current="page" href="#"><h1>صراحة بجنيه</h1></a>
-          <a class="nav-link" href="#">ما يحتاج تسوي حساب!</a>
-        </nav>
-      </div>
-    </header>
-    <br><br><br><br><br><br>
-    <main class="px-3">
-      <div class="alert">
-          <h3>عدد الرسايل : {{length}}</h3>
-      </div>
-      {{#each r}}
-        <div style="background-color:rgb(54, 7, 165);"> {{this.msg}}</div>
-          <br>
-      {{/each}}
-    </main>
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th>
+            <h1>اهلا</h1>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#if condition}}
+          <tr class="table-danger">
+            <td>
+              <h3>لا توجد رسائل حتى الان , قم بعمل اعادة تحميل للصفحة حتى تظهر
+                لك الرسائل الجديدة</h3>
+            </td>
+          </tr>
+        {{else}}
+          <tr class="table-success">
+            <td>
+              <h3>عدد الرسايل : {{length}}</h3>
+            </td>
+          </tr>
+        {{/if}}
+        {{#each r}}
+          <tr><th>{{this.msg}}</th></tr>
+        {{/each}}
+      </tbody>
+    </table>
 
-    <footer class="mt-auto text-white-50">
-    </footer>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"> انسخ هذا الرابط </h5>
+        <p class="card-text">
+          <input
+            class="form-control"
+            style="text-align: center;"
+            type="url"
+            value="https://saraha-sdg.herokuapp.com/up/{{link}}"
+          />
+        </p>
+        <a href="/up/{{link}}" class="btn btn-success"><h3>أو اضغط هنا وسوي
+            مشاركة للرابط
+          </h3></a>
+      </div>
+
+    </div>
+
   </div>
-
-
-
-</body>
+</div>

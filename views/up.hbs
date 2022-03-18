@@ -1,30 +1,39 @@
-<body class="d-flex h-100 text-center text-white bg-dark">
-
+<div class="d-flex h-100 text-center">
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="mb-auto">
-      <div>
-        <h3 class="float-md-start mb-0">M.A</h3>
-        <nav class="nav nav-masthead justify-content-center float-md-end">
-          <a class="nav-link active" aria-current="page" href="#"><h1>صراحة بجنيه</h1></a>
-          <a class="nav-link" href="#">ما يحتاج تسوي حساب!</a>
-        </nav>
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th>
+            <h1>اهلا</h1>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-active">
+          <td>
+            <p><h3> ارسل لصاحب الرابط دون ان يعرفك </h3></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="card" style="margin: 0 30%;">
+      <div class="card-body">
+        <h5 class="card-title"> ادخل الرسالة هنا </h5>
+        <form action="/msg" method="post">
+          <p class="card-text">
+            <textarea
+              class="form-control"
+              placeholder="الرسالة ......"
+              name="msg"
+            ></textarea>
+            <input type="hidden" value="{{id}}" name="id" />
+          </p>
+          <button type="submit" class="btn btn-primary"> ارسال</button>
+        </form>
       </div>
-    </header>
-    <br><br><br><br><br><br>
-    <main class="px-3">
-      <h1> ارسل رسالة لصاحب الرابط دون ان يعرفك! </h1>
-      <form action="/msg" method="post">
-        <input class="form-control" placeholder="الرسالة ......" name="msg">
-        <input type="hidden" value="{{id}}" name="id">
-        <br>
-        <button type="submit" class="btn btn-light">ارسل</button>
-      </form>
-    </main>
 
-    <footer class="mt-auto text-white-50">
-    </footer>
+    </div>
+
   </div>
-
-
-
-</body>
+</div>
